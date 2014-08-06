@@ -15,7 +15,7 @@ Manifest:
 comma.txt
 pipe.txt
 space.txt
-view_records.rb
+manage_records.rb
 DataRecord.rb
 DataRecordsList.rb
 myOutput.txt
