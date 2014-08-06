@@ -35,8 +35,8 @@ class DataRecord
 
 	def slurpLine(line)
 		# based on the delimiter read the line and convert to a DataRecord
-        	if (line =~ /\|/)
-			pipeDelimited(line) 
+    if (line =~ /\|/)
+      pipeDelimited(line)
 		elsif  (line =~ /,/)
 			commaDelimited(line) 
 		else

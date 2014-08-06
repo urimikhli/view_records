@@ -57,4 +57,3 @@ class DataRecordsList
 	end
   
 end
-1;
