@@ -6,13 +6,9 @@ class DataRecord
     getRecord(line)
   end
 
-  def to_s
-    puts "#{lastName}, #{firstName}, #{middleInitial}, #{gender}, #{favoriteColor}, #{dateOfBirth}"
-  end
-
-  def to_a
-    [lastName, firstName, middleInitial, gender, favoriteColor, dateOfBirth]
-  end
+ 	def record_output
+		"#{lastName} #{firstName} #{gender} #{dateOfBirth} #{favoriteColor}"
+	end
 
   private
 
