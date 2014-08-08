@@ -1,5 +1,5 @@
 
-ruby version: ruby 1.8.7 (2008-08-11 patchlevel 72) [i386-cygwin]
+ruby version: ruby 2.0.0p247 (2013-06-27 revision 41674) [universal.x86_64-darwin13]
 
 
 In the directory where all the files are you should run the following
@@ -16,8 +16,8 @@ comma.txt
 pipe.txt
 space.txt
 manage_records.rb
-DataRecord.rb
-DataRecordsList.rb
+data_record.rb
+data_record_list.rb
 myOutput.txt
 README.txt
 
