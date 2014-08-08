@@ -24,12 +24,8 @@ class DataRecord
 		else
 			spaceDelimited(line)
 		end
-
-#    #convert M to Male and F to Female
-#		convertGender
-#		#convert Dates to MMDDYYYY
-#		convertDate
-
+    spell_out_gender
+    consistent_birthdate
   end
 
 	def pipeDelimited(line)
@@ -45,21 +41,17 @@ class DataRecord
 		@lastName, @firstName, @gender, @favoriteColor, @dateOfBirth = line.split(", ")
 	end
 
-#	def convertGender
-#		#convert M to Male and F to Female
-#		if (@Gender =~ /^F$/)
-#			@Gender = "Female"
-#		elsif  (@Gender =~ /^M$/)
-#			@Gender = "Male"
-#		end
-#	end
+  def spell_out_gender
+    if (@gender =~ /^F$/)
+      @gender = "Female"
+    elsif  (@gender =~ /^M$/)
+      @gender = "Male"
+    end
+  end
 
-#	def convertDate
-#		#match '-' and '/' delimited mmddyyy formats and force them to mm/dd/yyyy format.
-#		# to make this faster replace (-|\/) with (-) 
-#		# just to match the bad formats and leave the correct ones alone
-#	  @DateOfBirth.sub!(/((1[0-2]|0?[1-9]))(-|\/)(3[01]|[12][0-9]|0?[1-9])(-|\/)((?:[0-9]{2})?[0-9]{2})/, '\1/\4/\6')
-#	end
+  def consistent_birthdate
+    @dateOfBirth.sub!(/((1[0-2]|0?[1-9]))(-|\/)(3[01]|[12][0-9]|0?[1-9])(-|\/)((?:[0-9]{2})?[0-9]{2})/, '\1/\4/\6')
+  end
 
 
 
