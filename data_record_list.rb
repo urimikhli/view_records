@@ -6,13 +6,23 @@ class DataRecordList
  		@record_list = Array.new
   end
 
-	def output_records
+	def output_records(sort_by)
+    if sort_by.eql? "gender"
+      sort_by_gender_lastname
+    elsif sort_by.eql? "birthdate"
+      sort_by_birthdate_lastname
+    elsif sort_by.eql? "lastname"
+      sort_by_lastname
+    end
 		@record_list.map { | record | puts record.record_output }
 	end
 
   def append(dataRecord)
     @record_list.push(dataRecord)
   end
+
+  private
+  attr_accessor :record_list
   
   def sort_by_gender_lastname
     @record_list.sort!{|x,y| [x.gender,x.lastName] <=> [y.gender,y.lastName] }
