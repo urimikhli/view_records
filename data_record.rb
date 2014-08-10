@@ -13,13 +13,13 @@ class DataRecord
   private
 
   def getRecord(line)
-  	if (line =~ /\|/)
-			pipeDelimited(line) 
-		elsif  (line =~ /,/)
-			commaDelimited(line) 
-		else
-			spaceDelimited(line)
-		end
+    if (line =~ /\|/)
+      pipeDelimited(line) 
+    elsif  (line =~ /,/)
+      commaDelimited(line) 
+    else
+      spaceDelimited(line)
+    end
     spell_out_gender
     consistent_birthdate
   end
