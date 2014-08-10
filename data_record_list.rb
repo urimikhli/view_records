@@ -22,7 +22,6 @@ class DataRecordList
   end
 
   private
-  attr_accessor :record_list
   
   def sort_by_gender_lastname
     @record_list.sort!{|x,y| [x.gender,x.lastName] <=> [y.gender,y.lastName] }
