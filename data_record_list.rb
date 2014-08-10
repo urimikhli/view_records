@@ -14,7 +14,7 @@ class DataRecordList
     elsif sort_by.eql? "lastname"
       sort_by_lastname
     end
-		@record_list.map { | record | puts record.record_output }
+		@record_list.map { | record | record.record_output }
 	end
 
   def append(dataRecord)

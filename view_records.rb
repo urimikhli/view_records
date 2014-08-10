@@ -11,11 +11,11 @@ ARGF.each do |line|
 end
 
 puts "Sort by gender:"
-recordList.output_records("gender")
+puts recordList.output_records("gender")
 
 puts "\nSort by birthday:"
-recordList.output_records("birthdate")
+puts recordList.output_records("birthdate")
 
 puts "\nSort by lastname:"
-recordList.output_records("lastname")
+puts recordList.output_records("lastname")
 
