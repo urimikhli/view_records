@@ -1,14 +1,15 @@
 require 'spec_helper'
+require './data_record'
 
-describe "manage records" do
-
-  context "Initializing the records by reading the files" do
+describe DataRecord do
+  
+  context ".record_output" do
     before do
-      records = DataRecords.new()
+      @record = DataRecord.new("Bonk | Radek | S | M | Green | 6-3-1975")
     end
+
     it "should instantiate a class instance with the records we want" do
-      records.should respond_to to_s
+      expect(@record.record_output).to eq "Bonk Radek Male 6/3/1975 Green"
     end
   end
 end
-
