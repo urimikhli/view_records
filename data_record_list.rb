@@ -6,7 +6,7 @@ class DataRecordList
  		@record_list = Array.new
   end
 
-	def output_records(sort_by)
+	def output_records(sort_by = "")
     if sort_by.eql? "gender"
       sort_by_gender_lastname
     elsif sort_by.eql? "birthdate"
