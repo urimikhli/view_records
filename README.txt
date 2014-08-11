@@ -1,5 +1,6 @@
 
 ruby version: ruby 2.0.0p247 (2013-06-27 revision 41674) [universal.x86_64-darwin13]
+rspec version 3.0.3
 
 In the directory where all the files are you should run the following
 
