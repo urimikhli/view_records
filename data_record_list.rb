@@ -29,9 +29,7 @@ class DataRecordList
 
   def sort_by_birthdate_lastname
     @record_list.sort! do  |x,y| 
-			xm,xd,xy = x.date_of_birth.split("/") 
-			ym,yd,yy =y.date_of_birth.split("/")
-			[xy,xm,xd,x.last_name] <=> [yy,ym,yd,y.last_name]
+			[x.date_of_birth,x.last_name] <=> [y.date_of_birth,y.last_name]
 		end
   end
 

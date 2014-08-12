@@ -42,7 +42,7 @@ describe DataRecordList do
         recordList.output_records("birthdate")
       end
       it "should show the oldest birthday first" do
-        expect(recordList.record_list.first.date_of_birth).to eq "2/13/1943"
+        expect(recordList.record_list.first.date_of_birth).to eq Time.new(1943,2,13)
       end 
     end
 

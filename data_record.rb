@@ -7,7 +7,7 @@ class DataRecord
   end
 
  	def record_output
-		"#{last_name} #{first_name} #{gender} #{date_of_birth} #{favorite_color}"
+		"#{last_name} #{first_name} #{gender} #{birthday} #{favorite_color}"
 	end
 
   private
@@ -46,7 +46,12 @@ class DataRecord
   end
 
   def consistent_birthdate
-    @date_of_birth.sub!(/((1[0-2]|0?[1-9]))(-|\/)(3[01]|[12][0-9]|0?[1-9])(-|\/)((?:[0-9]{2})?[0-9]{2})/, '\1/\4/\6')
+    m,d,y = @date_of_birth.sub!(/((1[0-2]|0?[1-9]))(-|\/)(3[01]|[12][0-9]|0?[1-9])(-|\/)((?:[0-9]{2})?[0-9]{2})/, '\1/\4/\6').split("/")
+    @date_of_birth=Time.new(y,m,d)
+  end
+
+  def birthday
+    "#{date_of_birth.month}/#{date_of_birth.day}/#{date_of_birth.year}"
   end
 
 
