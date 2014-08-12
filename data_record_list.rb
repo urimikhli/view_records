@@ -24,19 +24,19 @@ class DataRecordList
   private
   
   def sort_by_gender_lastname
-    @record_list.sort!{|x,y| [x.gender,x.lastName] <=> [y.gender,y.lastName] }
+    @record_list.sort!{|x,y| [x.gender,x.last_name] <=> [y.gender,y.last_name] }
   end
 
   def sort_by_birthdate_lastname
     @record_list.sort! do  |x,y| 
-			xm,xd,xy = x.dateOfBirth.split("/") 
-			ym,yd,yy =y.dateOfBirth.split("/")
-			[xy,xm,xd,x.lastName] <=> [yy,ym,yd,y.lastName]
+			xm,xd,xy = x.date_of_birth.split("/") 
+			ym,yd,yy =y.date_of_birth.split("/")
+			[xy,xm,xd,x.last_name] <=> [yy,ym,yd,y.last_name]
 		end
   end
 
   def sort_by_lastname
-    @record_list.sort!{|y,x| x.lastName <=> y.lastName }
+    @record_list.sort!{|y,x| x.last_name <=> y.last_name }
   end
 
 end

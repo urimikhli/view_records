@@ -1,40 +1,40 @@
 class DataRecord
-  attr_accessor :lastName, :firstName, :middleInitial, :gender, :favoriteColor, :dateOfBirth
+  attr_accessor :last_name, :first_name, :middle_initial, :gender, :favorite_color, :date_of_birth
 
   def initialize(line =nil)
     return unless line
-    getRecord(line)
+    get_record(line)
   end
 
  	def record_output
-		"#{lastName} #{firstName} #{gender} #{dateOfBirth} #{favoriteColor}"
+		"#{last_name} #{first_name} #{gender} #{date_of_birth} #{favorite_color}"
 	end
 
   private
 
-  def getRecord(line)
+  def get_record(line)
     if (line =~ /\|/)
-      pipeDelimited(line) 
+      pipe_delimited(line) 
     elsif  (line =~ /,/)
-      commaDelimited(line) 
+      comma_delimited(line) 
     else
-      spaceDelimited(line)
+      space_delimited(line)
     end
     spell_out_gender
     consistent_birthdate
   end
 
-	def pipeDelimited(line)
-		@lastName, @firstName, @middleInitial, @gender, @favoriteColor, @dateOfBirth = line.split(" | ")
+	def pipe_delimited(line)
+		@last_name, @first_name, @middle_initial, @gender, @favorite_color, @date_of_birth = line.split(" | ")
 	end
 
-	def spaceDelimited(line)
-		@lastName, @firstName, @middleInitial, @gender, @dateOfBirth, @favoriteColor = line.split(" ")
+	def space_delimited(line)
+		@last_name, @first_name, @middle_initial, @gender, @date_of_birth, @favorite_color = line.split(" ")
 	end
 
-	def commaDelimited(line)
-		@middleInitial = "" # for consistancy
-		@lastName, @firstName, @gender, @favoriteColor, @dateOfBirth = line.split(", ")
+	def comma_delimited(line)
+		@middle_initial = "" # for consistancy
+		@last_name, @first_name, @gender, @favorite_color, @date_of_birth = line.split(", ")
 	end
 
   def spell_out_gender
@@ -46,7 +46,7 @@ class DataRecord
   end
 
   def consistent_birthdate
-    @dateOfBirth.sub!(/((1[0-2]|0?[1-9]))(-|\/)(3[01]|[12][0-9]|0?[1-9])(-|\/)((?:[0-9]{2})?[0-9]{2})/, '\1/\4/\6')
+    @date_of_birth.sub!(/((1[0-2]|0?[1-9]))(-|\/)(3[01]|[12][0-9]|0?[1-9])(-|\/)((?:[0-9]{2})?[0-9]{2})/, '\1/\4/\6')
   end
 
 

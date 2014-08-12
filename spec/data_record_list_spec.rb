@@ -33,7 +33,7 @@ describe DataRecordList do
         recordList.output_records("gender")
       end
       it "should show the Female record first" do
-        expect(recordList.record_list.first.firstName).to eq "Anna"
+        expect(recordList.record_list.first.first_name).to eq "Anna"
       end 
     end
 
@@ -42,7 +42,7 @@ describe DataRecordList do
         recordList.output_records("birthdate")
       end
       it "should show the oldest birthday first" do
-        expect(recordList.record_list.first.dateOfBirth).to eq "2/13/1943"
+        expect(recordList.record_list.first.date_of_birth).to eq "2/13/1943"
       end 
     end
 
@@ -51,7 +51,7 @@ describe DataRecordList do
         recordList.output_records("birthdate")
       end
       it "should show Abercrombie last name first" do
-        expect(recordList.record_list.first.lastName).to eq "Abercrombie"
+        expect(recordList.record_list.first.last_name).to eq "Abercrombie"
       end 
     end
 
