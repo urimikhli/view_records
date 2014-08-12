@@ -4,7 +4,7 @@ require './data_record'
 describe DataRecord do
   
   let(:record) { DataRecord.new("Bonk | Radek | S | M | Green | 6-3-1975") }
-  context ".record_output" do
+  describe ".record_output" do
     before do
      # @record = DataRecord.new("Bonk | Radek | S | M | Green | 6-3-1975")
     end

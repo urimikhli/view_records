@@ -11,7 +11,7 @@ describe DataRecordList do
     expect(recordList.record_list).to eq []
   end
   
-  context ".append" do
+  describe ".append" do
     before do
       recordList.append(DataRecord.new("Bonk | Radek | S | M | Green | 6-3-1975")) 
     end
@@ -21,7 +21,7 @@ describe DataRecordList do
     end
     
   end
-  context ".output_records" do
+  describe ".output_records" do
     before do
       recordList.append(DataRecord.new("Bonk | Radek | S | M | Green | 6-3-1975"))
       recordList.append(DataRecord.new("Kournikova Anna F F 6-3-1975 Red"))
